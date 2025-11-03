@@ -107,10 +107,3 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 To learn React, check out the [React documentation](https://reactjs.org/).  
 
 ---
-
-### Author  
-👤 **Sashi Vardhan Pragada**  
-🔗 [GitHub Profile](https://github.com/SASHI117)
-
----
-(read this )
