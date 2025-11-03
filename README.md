@@ -1,88 +1,116 @@
-"""
-# 🌐 AI-Based Internet Connectivity Optimizer
-## 🚀 Predict • Optimize • Connect Smarter
+# Pro Task Manager 🧠  
 
-An AI-powered web application built with Streamlit that predicts and optimizes network signal strength 
-based on real-time parameters like location, weather, latency, and users online.
+This project is a **Task Manager Dashboard** built with **React + Firebase + Tailwind CSS**, designed to help users organize their tasks efficiently.  
+It features secure authentication (Signup, Login, Forgot Password) and a dynamic dashboard layout.  
 
-It uses a Random Forest Regressor model trained on historical data (signal_data.csv) and automates 
-live input fetching using browser geolocation and OpenWeatherMap API — no manual data upload required.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).  
 
 ---
 
-## 🧠 Key Features
+## 📦 Available Scripts  
 
-✅ Real-Time Signal Prediction: Automatically fetches current location, weather, and network stats.  
-✅ ML-Driven Optimization: Uses a trained Random Forest model for accurate signal strength predictions.  
-✅ Browser Integration: Detects user’s geolocation directly through Streamlit-Javascript.  
-✅ Clean UI: Interactive Streamlit dashboard for easy insights and manual parameter tweaking.  
-✅ Offline/Manual Mode: Option to enter values manually if geolocation or APIs fail.  
-✅ Model Transparency: Includes encoded preprocessing (LabelEncoder for weather) and pickle-based model storage.
+In the project directory, you can run:  
 
----
+### `npm start`  
+Runs the app in the development mode.  
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.  
 
-## 🧰 Installation Guide
-
-### 2️⃣ Install Dependencies
-pip install -r requirements.txt
-
-### 3️⃣ Add Required Files
-- model.pkl – Trained Random Forest model  
-- encoder.pkl – LabelEncoder for weather data  
-- .env – Your OpenWeatherMap API key (optional for manual mode)
-
-Example .env:
-OPENWEATHER_API_KEY=your_api_key_here
-
-### 4️⃣ Run the App
-streamlit run app.py
-
-Then open the local URL shown in the terminal (e.g., http://localhost:8501)
+The page will reload when you make changes.  
+You may also see any lint errors in the console.  
 
 ---
 
-## 📁 File Structure
+### `npm run build`  
+Builds the app for production to the `build` folder.  
+It correctly bundles React in production mode and optimizes the build for the best performance.  
 
-AI-Internet-Connectivity-Optimizer/
-│
-├── app.py                 # Main Streamlit application  
-├── model.pkl              # Trained RandomForestRegressor model  
-├── encoder.pkl            # LabelEncoder for weather categories  
-├── requirements.txt       # Dependencies  
-├── README.md              # Project Documentation  
-└── assets/
-    ├── screenshots/       # UI Previews (optional)
-    └── favicon.ico        # App icon (optional)
+The build is minified and the filenames include the hashes.  
+Your app is ready to be deployed!  
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.  
 
 ---
 
-## ⚙️ How It Works
-
-### 🔹 Fetch Live Data
-- Fetches location coordinates from the browser using Streamlit-Javascript.  
-- Retrieves current weather via the OpenWeatherMap API.  
-- Measures latency & speed through local tests or user input.
-
-### 🔹 Predict Signal Strength
-- The Random Forest model predicts signal strength (0–100) using trained features.  
-- Features used: latency, weather, users_online.
-
-### 🔹 Visualize & Compare
-- Streamlit dashboard shows predictions, confidence levels, and optimization suggestions.
+### `npm test`  
+Launches the test runner in the interactive watch mode.  
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.  
 
 ---
 
-## 📊 Model Training
+### `npm run eject`  
+**Note:** this is a one-way operation. Once you `eject`, you can't go back!  
 
-Feature | Description  
----------|--------------  
-latency | Network delay in ms  
-weather | Weather condition (encoded)  
-users_online | Active users sharing the network  
-Target → signal_strength | Predicted connectivity strength  
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time.  
+This will copy all configuration files and transitive dependencies (webpack, Babel, ESLint, etc.) directly into your project.  
 
-**Training Snippet:**
-```python
-model = RandomForestRegressor(n_estimators=200, random_state=42)
-model.fit(X_train, y_train)
-joblib.dump(model, "model.pkl")
+---
+
+## 🔧 Environment Setup  
+
+Before running the app, create a `.env` file in the root folder and add your Firebase configuration:  
+
+VITE_FIREBASE_API_KEY=your_api_key
+VITE_FIREBASE_AUTH_DOMAIN=your_auth_domain
+VITE_FIREBASE_PROJECT_ID=your_project_id
+VITE_FIREBASE_STORAGE_BUCKET=your_storage_bucket
+VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+VITE_FIREBASE_APP_ID=your_app_id
+VITE_FIREBASE_MEASUREMENT_ID=your_measurement_id
+
+
+Make sure your `.env` file is **listed in `.gitignore`** to keep your keys private.  
+
+---
+
+## ⚙️ Features  
+
+- 🔐 **User Authentication** (Signup, Login, Forgot Password)  
+- 🧭 **Dashboard Layout** with reusable components  
+- ☁️ **Firebase Firestore Database** for task storage  
+- 💅 **Tailwind CSS Styling** for a clean UI  
+- ⚡ **Responsive Design** for mobile and desktop  
+
+---
+
+## 📁 Project Structure  
+
+src/
+├── App.jsx
+├── index.js
+├── firebase.js
+├── contexts/
+│ └── AuthContext.js
+├── components/
+│ └── DashboardLayout.jsx
+└── pages/
+├── LoginPage.jsx
+├── SignupPage.jsx
+└── ForgotPasswordPage.jsx
+
+
+---
+
+## 🚀 Deployment  
+
+You can deploy your build folder using:  
+- **Vercel**
+- **Netlify**
+- **Firebase Hosting**
+
+Refer to [Deployment Guide](https://facebook.github.io/create-react-app/docs/deployment) for step-by-step instructions.  
+
+---
+
+## 📚 Learn More  
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).  
+To learn React, check out the [React documentation](https://reactjs.org/).  
+
+---
+
+### Author  
+👤 **Sashi Vardhan Pragada**  
+🔗 [GitHub Profile](https://github.com/SASHI117)
+
+---
+(read this )
